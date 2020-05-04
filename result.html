@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+   <style>
+       div input {
+           width: 120px;
+           height: 50px;
+          
+       }
+       div{
+        margin-left: 100px;
+        margin-top: 120px;
+        background: lightblue;
+        width: 500px;
+        padding: 30px;
+       }
+
+       div button{
+           margin-top: 5px;
+           width: 120px;
+           
+           
+       }
+
+       div h3{
+           margin-bottom: 40px;
+       }
+   </style>
+
+
+</head>
+<body>
+   <div>
+    <h3>Input your number <br> to get your Result</h3>
+    <input type="number" id="int" placeholder="input your number" class="w-50 h-40"> <br>
+    <button class="btn-primary" onclick="getResult()" id="btn">Submit</button> 
+    <h3>you have got: <br> <span  id="gotN"></span></h3>
+   </div>
+    <script>
+    
+            function getResult(){
+               
+                var input = document.getElementById("int").value;
+                var text= document.getElementById('gotN')
+                document.getElementById("int").value='';
+
+                if( input<33 && input>=0) text.innerHTML= 'F'  ;
+                
+                else if( input>=33 && input<40) text.innerHTML = 'D';
+                else if( input>=40 && input<50)text.innerHTML= 'C';
+                else if( input>=50 && input<60)  text.innerHTML= 'B';
+                else if( input>=60 && input<70) text.innerHTML= 'A-';
+                else if( input>=70 && input<80)  text.innerHTML= 'A';
+                else if( input>=80 && input<=100) text.innerHTML= 'A+';
+                
+                else { text.innerHTML= 'Invalid Number'}    
+            }
+    </script>
+
+</body>
+</html>
